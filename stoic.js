@@ -1,19 +1,20 @@
 function ignore(event) {
     event.stopImmediatePropagation()
     event.preventDefault()
+    event.returnValue = '';
 }
 
-const EVENT_TYPES = [
-    'mousedown',
-    'mouseup',
+const WINDOW_EVENT_TYPES = [
+    'beforeunload',
+]
+WINDOW_EVENT_TYPES.forEach((event_type) => window.addEventListener(event_type, ignore))
+
+const DOCUMENT_EVENT_TYPES = [
     'click',
     'keydown',
-    'keyup',
     'keypress',
+    'keyup',
+    'mousedown',
+    'mouseup',
 ]
-
-EVENT_TYPES.forEach((event_type) => document.addEventListener(event_type, ignore))
-window.addEventListener('beforeunload', function (event) {
-    event.preventDefault();
-    event.returnValue = '';
-})
+DOCUMENT_EVENT_TYPES.forEach((event_type) => document.addEventListener(event_type, ignore))
