@@ -13,3 +13,7 @@ const EVENT_TYPES = [
 ]
 
 EVENT_TYPES.forEach((event_type) => document.addEventListener(event_type, ignore))
+window.addEventListener('beforeunload', function (event) {
+    event.preventDefault();
+    event.returnValue = '';
+})
