@@ -10,6 +10,7 @@ const WINDOW_EVENT_TYPES = [
 WINDOW_EVENT_TYPES.forEach((event_type) => window.addEventListener(event_type, ignore))
 
 const DOCUMENT_EVENT_TYPES = [
+    'auxclick',
     'click',
     'keydown',
     'keypress',
