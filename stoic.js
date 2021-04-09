@@ -5,7 +5,6 @@ function ignore(event) {
 }
 
 const WINDOW_EVENT_TYPES = [
-    'beforeunload',
 ]
 WINDOW_EVENT_TYPES.forEach((event_type) => window.addEventListener(event_type, ignore))
 
